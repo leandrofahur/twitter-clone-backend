@@ -6,11 +6,7 @@ import { userRoute } from './routes/userRoute';
 import { postRoute } from './routes/postRoute';
 import { commentRoute } from './routes/commentRoute';
 
-try {
-  createConnection();
-} catch (error) {
-  console.error(error.message);
-}
+createConnection();
 
 const app = express();
 

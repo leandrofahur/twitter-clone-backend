@@ -47,6 +47,31 @@ class UserController {
       });
     }
   }
+
+  async findByUsername(request: Request, response: Response) {
+    try {
+      const { username } = request.params;
+      const usersRepository = getCustomRepository(UsersRepository);
+      const user = await usersRepository.findOne({
+        where: {
+          username,
+        },
+      });
+
+      if (!user) {
+        return response.status(400).json({
+          error: 'User does not exists',
+        });
+      }
+
+      return response.status(201).json(user.id);
+    } catch (error) {
+      console.error(error.message);
+      response.status(500).json({
+        error: 'Server error!',
+      });
+    }
+  }
 }
 
 export { UserController };

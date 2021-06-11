@@ -1,4 +1,4 @@
-import { createConnection, getConnectionOptions } from "typeorm";
+import { createConnection, getConnectionOptions } from 'typeorm';
 
 export default async () => {
   const defaultOptions = await getConnectionOptions();
@@ -6,8 +6,8 @@ export default async () => {
   return createConnection(
     Object.assign(defaultOptions, {
       database:
-        process.env.NODE_ENV === "test"
-          ? "tweeter-test"
+        process.env.NODE_ENV === 'test'
+          ? 'twitter-test'
           : defaultOptions.database,
     })
   );

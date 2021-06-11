@@ -18,4 +18,11 @@ userRoute.post('/users', userController.create);
  */
 userRoute.get('/users', userController.findPostsByUser);
 
+/*
+ * @route:  GET /users/:username
+ * @desc:   Fetch id by username.
+ * @access: Public
+ */
+userRoute.get('/users/:username', userController.findByUsername);
+
 export { userRoute };
