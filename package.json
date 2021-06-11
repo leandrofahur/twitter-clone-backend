@@ -9,10 +9,11 @@
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
     "server": "nodemon src/server.ts",
-    "start": "ts-node src/index.ts",
+    "start": "ts-node src/server.ts",
     "test": "NODE_ENV=test jest"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "pg": "^8.6.0",
     "reflect-metadata": "^0.1.10",
